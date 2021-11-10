@@ -1,4 +1,3 @@
-import numpy
 from sklearn import datasets, neighbors, metrics, svm
 from sklearn.model_selection import train_test_split
 
@@ -41,21 +40,19 @@ classifier = neighbors.KNeighborsClassifier(n_neighbors=3)
 classifier.fit(X_train, y_train)
 # Testing
 y_pred = classifier.predict(X_test)
-print(y_pred)
 
 
 def get_confusion_matrix(true_list, predicted_list, class_labels):
     c_matrix = metrics.confusion_matrix(true_list, predicted_list)
-    print(" %25s %25s %25s" % ('fazal', 'mahmud', 'niloy'))
-    print("\t\t\t\t", end='')
+    print(f"%35s" % " ", end='')
     for i in class_labels:
-        print(i, "\t\t", end='')
+        print(f"%35s" % i, end='')
     print()
     p = 0
     for i in c_matrix:
-        print(class_labels[p], "\t\t\t", end='')
+        print(f"%35s" % class_labels[p], end='')
         for j in i:
-            print(j, "\t\t\t\t", end='')
+            print(f"%35s" % j, end='')
         print()
         p = p + 1
 
@@ -67,8 +64,4 @@ def get_confusion_matrix(true_list, predicted_list, class_labels):
 # plt.show()
 label_names = ['Setosa', 'Versicolour', 'Virginica']
 confusion_matrix = get_confusion_matrix(y_pred, y_test, label_names)
-# print(confusion_matrix)
 
-# """add a row on the top of a numpy array"""
-# confusion_matrix = numpy.vstack((confusion_matrix, labels_names))
-# print(confusion_matrix)
