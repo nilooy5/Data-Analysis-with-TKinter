@@ -3,8 +3,12 @@ from sklearn import datasets
 
 while True:
     print("input 2 numbers from between 0 to 3.")
-    a = int(input("a = "))
-    b = int(input("b = "))
+    try:
+        a = int(input("a: "))
+        b = int(input("b: "))
+    except ValueError:
+        print("input error.")
+        continue
 
     if a < 0 or a > 3 or b < 0 or b > 3:
         print("input error.")
