@@ -59,9 +59,6 @@ def get_confusion_matrix(true_list, predicted_list, class_labels):
     return c_matrix
 
 
-# Plot confusion matrix
-# metrics.plot_confusion_matrix(classifier, X_test, y_test, display_labels=class_names)
-# plt.show()
 label_names = ['Setosa', 'Versicolour', 'Virginica']
 confusion_matrix = get_confusion_matrix(y_pred, y_test, label_names)
 
