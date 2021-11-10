@@ -39,5 +39,5 @@ axs[1, 2].set_title('SID Exam')
 axs[1, 2].set_xlabel('Mark')
 axs[1, 2].set_ylabel('Number of Students')
 
-# plt.hist(sid['Exam'])
+plt.savefig('question7.png')
 plt.show()
