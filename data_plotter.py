@@ -24,6 +24,7 @@ def plot_data(dataset_name):
 
         """make a scatter plot from dataset"""
         plt.scatter(arr[:, 0], arr[:, 1], s=10, c=point_color)
+        plt.title(dataset_name)
 
     else:
         """read all datasets"""

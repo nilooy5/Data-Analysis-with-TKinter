@@ -14,7 +14,7 @@ window.title('Programming for Data Science')
 window.geometry("700x500+400+100")
 
 lbl_header = tk.Label(
-    text="Final Assignment by Fazal Mahmud Niloy (u3228358)",
+    text="Final Assignment Q9 by Fazal Mahmud Niloy (u3228358)",
     font=myFont_big,
     height=1
 )
