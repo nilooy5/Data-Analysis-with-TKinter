@@ -37,6 +37,7 @@ def load_iris_dataset(filename):
 
         i = i + 1
 
+    X = np.array(X)
     return [X, y, class_labels]
 
 
