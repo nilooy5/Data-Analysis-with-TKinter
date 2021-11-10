@@ -13,6 +13,8 @@ def read_multi_dim_data(filename):
             else:
                 line = line.removesuffix("\n")
                 xy = line.split(" ")
+                for i in range(len(xy)):
+                    xy[i] = float(xy[i])
                 dataset.append(list(xy))
     except Exception as ex:
         print(ex.args)
