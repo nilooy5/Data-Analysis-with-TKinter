@@ -60,6 +60,8 @@ writer = pd.ExcelWriter('Files_Assignment3/myexcel.xls', engine='xlsxwriter')
 df_new_s.to_excel(writer, sheet_name='SID')
 df_new_u.to_excel(writer, sheet_name='UID')
 
+print("Saved to excel in 'Files_Assignment3/myexcel.xls'")
+
 # Close the Pandas Excel writer and output the Excel file.
 writer.save()
 
