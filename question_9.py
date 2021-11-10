@@ -44,11 +44,11 @@ lbl_selected_dataset.place(x=10, y=70)
 def select_dataset():
     selected = dataset_name.get()
     selected_dataset_string = selected + ' dataset selected'
-
     lbl_selected_dataset.config(text=selected_dataset_string)
+    select_widget_values()
 
 
-dataset_name = tk.StringVar(value="red_2d")
+dataset_name = tk.StringVar(value="")
 
 rb_blue = tk.Radiobutton(
     text="Blue",
@@ -88,27 +88,8 @@ rb_all.place(x=450, y=50)
 
 
 def select_widget_values():
-    select_dataset()
+    # select_dataset()
     dp.plot_data(dataset_name.get())
-    # training.run_classification(
-    #     dataset_name=dataset_name.get(),
-    #     classification_name=classifier_name.get(),
-    #     number_of_folds=folds,
-    #     label_best_parameter=lbl_best_param,
-    #     label_accuracy=lbl_accuracy
-    # )
 
-
-button = tk.Button(
-    text="Run Model",
-    fg="black",
-    bg="white",
-    width=10,
-    height=1,
-    font=myFont,
-    command=select_widget_values
-)
-
-button.place(x=10, y=300)
 
 window.mainloop()
