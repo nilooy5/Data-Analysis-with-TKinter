@@ -19,6 +19,9 @@ while True:
 
     while i != len(arr):
         for j in range(i, len(arr)):
-            print(arr[j], end=' ')
+            if number < 0:
+                print(arr[j] * -1, end=" ")
+            else:
+                print(arr[j], end=' ')
         print()
         i = i + 1
