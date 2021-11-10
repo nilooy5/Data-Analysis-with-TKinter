@@ -1,4 +1,10 @@
 import tkinter as tk
+
+from matplotlib.backend_bases import key_press_handler
+from matplotlib.backends._backend_tk import NavigationToolbar2Tk
+from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
+from matplotlib.figure import Figure
+
 import data_plotter as dp
 
 # import training as training
@@ -11,7 +17,38 @@ myFont_small = "Arial, 8"
 
 window = tk.Tk()
 window.title('Programming for Data Science')
-window.geometry("700x500+400+100")
+window.geometry("700x700+400+100")
+
+### START codes for matplotlib in tkinter
+
+fig = Figure(figsize=(3, 6), dpi=70)
+
+canvas = FigureCanvasTkAgg(fig, master=window)  # A tk.DrawingArea.
+# canvas.draw()
+canvas.get_tk_widget().pack(side=tk.BOTTOM, fill=tk.BOTH)
+
+toolbar = NavigationToolbar2Tk(canvas, window)
+toolbar.update()
+canvas.get_tk_widget().pack(side=tk.BOTTOM, fill=tk.BOTH)
+
+
+def on_key_press(event):
+    print("you pressed {}".format(event.key))
+    key_press_handler(event, canvas, toolbar)
+
+
+canvas.mpl_connect("key_press_event", on_key_press)
+
+
+def _quit():
+    window.quit()     # stops mainloop
+    window.destroy()  # this is necessary on Windows to prevent
+                    # Fatal Python Error: PyEval_RestoreThread: NULL tstate
+
+
+button = tk.Button(master=window, text="Quit", command=_quit)
+button.pack(side=tk.BOTTOM)
+### START codes for matplotlib in tkinter
 
 lbl_header = tk.Label(
     text="Final Assignment Q9 by Fazal Mahmud Niloy (u3228358)",
@@ -89,7 +126,7 @@ rb_all.place(x=450, y=50)
 
 def select_widget_values():
     # select_dataset()
-    dp.plot_data(dataset_name.get())
+    dp.plot_data(dataset_name.get(), fig, canvas)
 
 
 window.mainloop()
