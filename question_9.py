@@ -8,7 +8,6 @@ myFont_medium = "Arial, 10"
 myFont_small = "Arial, 8"
 
 
-
 window = tk.Tk()
 window.title('Programming for Data Science')
 window.geometry("700x500+400+100")
