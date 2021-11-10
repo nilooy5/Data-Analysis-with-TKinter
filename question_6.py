@@ -36,7 +36,9 @@ print("starts with S:")
 print(df_new_s)
 
 """parse values of df_new_s['A1'] to numeric"""
-df_new_s['A1'] = pd.to_numeric(df_new_s['A1'])
+df_new_s['A1'] = pd.to_numeric(df_new_s['A1'], errors='coerce')
+df_new_s['A2'] = pd.to_numeric(df_new_s['A2'], errors='coerce')
+df_new_s['Exam'] = pd.to_numeric(df_new_s['Exam'], errors='coerce')
 
 """sort data of df_new_s by A1"""
 df_new_s = df_new_s.sort_values(by='A1')
@@ -45,6 +47,8 @@ print(df_new_s)
 
 """parse values of df_new_u['A1'] to numeric"""
 df_new_u['A1'] = pd.to_numeric(df_new_u['A1'], errors='coerce')
+df_new_u['A2'] = pd.to_numeric(df_new_u['A2'], errors='coerce')
+df_new_u['Exam'] = pd.to_numeric(df_new_u['Exam'], errors='coerce')
 
 """sort data of df_new_u by A1"""
 df_new_u = df_new_u.sort_values(by='A1')
