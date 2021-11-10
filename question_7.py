@@ -39,5 +39,8 @@ axs[1, 2].set_title('SID Exam')
 axs[1, 2].set_xlabel('Mark')
 axs[1, 2].set_ylabel('Number of Students')
 
+win = plt.gcf()
+win.set_size_inches(15, 10)
 plt.savefig('question7.png')
+print("file saved as 'question7.png'")
 plt.show()
