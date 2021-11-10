@@ -22,7 +22,11 @@ for item in dataset:
     item = list(item)
     if i % 2 == 1:
         print(item[0], item[1], item[2], item[3], item[4])
-        X.append(item[:-2])
+        temp = []
+        for j in item[:-1]:
+            temp.append(float(j))
+        X.append(temp)
+        temp = []
         if item[-1] == 'Iris-setosa':
             y.append(0)
         elif item[-1] == 'Iris-versicolor':
