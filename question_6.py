@@ -34,3 +34,28 @@ print(df_new_u)
 df_new_s = df_new[df_new['ID'].str.startswith('s')]
 print("starts with S:")
 print(df_new_s)
+
+"""parse values of df_new_s['A1'] to numeric"""
+df_new_s['A1'] = pd.to_numeric(df_new_s['A1'])
+
+"""sort data of df_new_s by A1"""
+df_new_s = df_new_s.sort_values(by='A1')
+print("SORTED starts with S:")
+print(df_new_s)
+
+"""parse values of df_new_u['A1'] to numeric"""
+df_new_u['A1'] = pd.to_numeric(df_new_u['A1'], errors='coerce')
+
+"""sort data of df_new_u by A1"""
+df_new_u = df_new_u.sort_values(by='A1')
+print("SORTED starts with U:")
+print(df_new_u)
+
+writer = pd.ExcelWriter('Files_Assignment3/myexcel.xls', engine='xlsxwriter')
+
+df_new_s.to_excel(writer, sheet_name='SID')
+df_new_u.to_excel(writer, sheet_name='UID')
+
+# Close the Pandas Excel writer and output the Excel file.
+writer.save()
+
