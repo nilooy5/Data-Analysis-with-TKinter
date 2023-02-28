@@ -1,6 +1,6 @@
 import pandas as pd
 
-df = pd.read_csv('Files_Assignment3/mycsv.csv')
+df = pd.read_csv('data/mycsv.csv')
 
 df = df.iloc[:, [2, 4, 5, 6]]
 

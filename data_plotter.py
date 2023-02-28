@@ -16,7 +16,7 @@ def plot_data(dataset_name, fig2, canvas):
             point_color = 'r'
         elif dataset_name == 'unknown_2d':
             point_color = 'g'
-        selected_file = 'Files_Assignment3/' + dataset_name + '.txt'
+        selected_file = 'data/' + dataset_name + '.txt'
 
         dataset = io.read_multi_dim_data(selected_file)
         print(dataset)
@@ -34,9 +34,9 @@ def plot_data(dataset_name, fig2, canvas):
 
     else:
         """read all datasets"""
-        blue_file = 'Files_Assignment3/blue_2d.txt'
-        red_file = 'Files_Assignment3/red_2d.txt'
-        unknown_file = 'Files_Assignment3/unknown_2d.txt'
+        blue_file = 'data/blue_2d.txt'
+        red_file = 'data/red_2d.txt'
+        unknown_file = 'data/unknown_2d.txt'
         blue_data = np.array(io.read_multi_dim_data(blue_file))
         red_red = np.array(io.read_multi_dim_data(red_file))
         unknown_data = np.array(io.read_multi_dim_data(unknown_file))

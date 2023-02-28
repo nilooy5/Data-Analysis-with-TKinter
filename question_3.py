@@ -3,7 +3,7 @@ import io_data_module as io
 
 
 def load_iris_dataset(filename):
-    dataset = io.read_multi_dim_data("Files_Assignment3/" + str(filename))
+    dataset = io.read_multi_dim_data("data/" + str(filename))
 
     labels_dict = {}
     for item in dataset:

@@ -16,7 +16,7 @@ myFont_medium = "Arial, 10"
 myFont_small = "Arial, 8"
 
 window = tk.Tk()
-window.title('Programming for Data Science')
+window.title('Fazal Mahmud Niloy')
 window.geometry("700x700+400+100")
 
 ### START codes for matplotlib in tkinter
@@ -51,7 +51,7 @@ button.pack(side=tk.BOTTOM)
 ### START codes for matplotlib in tkinter
 
 lbl_header = tk.Label(
-    text="Final Assignment Q9 by Fazal Mahmud Niloy (u3228358)",
+    text="9 by Fazal Mahmud Niloy",
     font=myFont_big,
     height=1
 )
